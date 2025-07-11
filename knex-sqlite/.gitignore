@@ -4,4 +4,4 @@
 /coverage
 /logs
 /tmp
-/db.sqlite
+/db/db.sqlite
