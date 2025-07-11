@@ -10,7 +10,9 @@
     "dev": "npx tsx src/server.ts"
   },
   "dependencies": {
-    "fastify": "^5.4.0"
+    "fastify": "^5.4.0",
+    "knex": "^3.1.0",
+    "sqlite3": "^5.1.7"
   },
   "devDependencies": {
     "@eslint/js": "^9.30.1",
