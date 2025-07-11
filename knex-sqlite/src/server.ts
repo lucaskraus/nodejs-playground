@@ -22,3 +22,5 @@ server.listen({ port: 3000 }, (err, address) => {
   }
   console.log(`Server is running on ${address} ✅`);
 });
+
+export default server;

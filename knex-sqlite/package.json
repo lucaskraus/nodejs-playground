@@ -11,10 +11,12 @@
     "knex": "node --no-warnings --import tsx ./node_modules/.bin/knex"
   },
   "dependencies": {
+    "dotenv": "^17.2.0",
     "fastify": "^5.4.0",
     "knex": "^3.1.0",
     "sqlite3": "^5.1.7",
-    "tsx": "^4.20.3"
+    "tsx": "^4.20.3",
+    "zod": "^4.0.5"
   },
   "devDependencies": {
     "@eslint/js": "^9.30.1",
