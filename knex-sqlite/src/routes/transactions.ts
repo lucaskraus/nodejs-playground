@@ -6,7 +6,13 @@ import { Transaction } from '../types';
 
 export async function transactionRoutes(app: FastifyInstance) {
   app.get('/', async (req, res) => {
-    const transactions = await knex('transactions').select('*');
+    const sessionId = req.cookies.sessionId;
+    if (!sessionId) {
+      return res
+        .status(401)
+        .send({ error: 'Unauthorized', message: 'Session ID is required for this route' });
+    }
+    const transactions = await knex('transactions').where('session_id', sessionId).select('*');
     return res.status(200).send({ transactions });
   });
 
