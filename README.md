@@ -5,7 +5,7 @@ I created this repository to learn Node.js in practice and streamline the proces
 > [!IMPORTANT]
 > More details about each project can be found in the folder’s README.
 
-## [Fastify + Knex + SQLite]([https://pages.github.com/](https://github.com/lucaskraus/nodejs-playground/tree/main/knex-sqlite)).
+## [Fastify + Knex + SQLite](https://github.com/lucaskraus/nodejs-playground/tree/main/knex-sqlite)
 
 Basic banking operations REST API created with Fastify. Knex is used to manage SQL queries and migrations. All data is stored in SQLite.
 
