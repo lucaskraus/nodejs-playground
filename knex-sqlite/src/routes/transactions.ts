@@ -6,6 +6,11 @@ import { Transaction } from '../types';
 import checkSessionIdExists from '../middlewares/check-session-id-exists';
 
 export async function transactionRoutes(app: FastifyInstance) {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  app.addHook('preHandler', async (req, res) => {
+    console.log(`[${req.method}] ${req.url}`);
+  });
+
   app.get('/', { preHandler: [checkSessionIdExists] }, async (req, res) => {
     const { sessionId } = req.cookies;
 
