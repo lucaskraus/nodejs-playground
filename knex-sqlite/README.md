@@ -42,7 +42,7 @@ The main table is `transactions`:
 
 All endpoints are prefixed with `/transactions`.
 
-### `GET /transactions/`
+### `GET /transactions`
 
 - **Description:** List all transactions for the current session.
 - **Auth:** Requires session cookie.
@@ -57,7 +57,7 @@ All endpoints are prefixed with `/transactions`.
 - **Description:** Get the sum of all transaction amounts for the session.
 - **Auth:** Requires session cookie.
 
-### `POST /transactions/`
+### `POST /transactions`
 
 - **Description:** Create a new transaction. Sets a session cookie if not present.
 - **Body:**
