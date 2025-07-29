@@ -1,4 +1,5 @@
 import { hash } from "bcryptjs"
+import { UserRepository } from "@/http/repositories/users"
 
 interface RegisterUserUseCaseProps {
     name: string
@@ -12,7 +13,7 @@ class RegisterUserUseCase {
   async execute({ name, email, password }: RegisterUserUseCaseProps) {
     const passwordHash = await hash(password, 6)
 
-    await this.userRepository.create({ name, email, password: passwordHash })
+    await this.userRepository.create({ name, email, password_hash: passwordHash })
   }
 }
 
