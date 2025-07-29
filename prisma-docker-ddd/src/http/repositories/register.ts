@@ -1,17 +1,11 @@
 import { prisma } from "@/lib/prisma";
+import { Prisma } from "@/generated/prisma";
 
-interface RegisterUserRepositoryProps {
-  name: string
-  email: string
-  password: string
-}
-
-export async function registerUserRepository({ name, email, password }: RegisterUserRepositoryProps) {
-  await prisma.user.create({
-    data: {
-      name,
-      email,
-      password_hash: password,
-    }
-  })
+export class PrismaRegisterUserRepository {
+  async create(data: Prisma.UserCreateInput) {
+    const user = await prisma.user.create({
+      data,
+    })
+    return user
+  }
 }
