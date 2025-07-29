@@ -9,6 +9,7 @@
     "build": "tsup src --out-dir dist",
     "compose:up": "docker compose up -d",
     "compose:stop": "docker compose stop",
+    "prisma:generate": "npx prisma generate",
     "prisma:dev": "npx prisma migrate dev",
     "prisma:studio": "npx prisma studio"
   },

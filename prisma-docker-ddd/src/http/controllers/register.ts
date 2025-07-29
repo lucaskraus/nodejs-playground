@@ -14,7 +14,7 @@ export async function registerUser(request: FastifyRequest, reply: FastifyReply)
 
   const password_hash = await hash(password, 6)
 
-  const user = await prisma.user.create({
+  await prisma.user.create({
     data: {
       name,
       email,
@@ -22,5 +22,5 @@ export async function registerUser(request: FastifyRequest, reply: FastifyReply)
     }
   })
 
-  return reply.status(201).send(user)
+  return reply.status(201).send({ message: 'User created successfully' })
 }
