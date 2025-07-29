@@ -1,5 +1,9 @@
-import { Prisma, User } from "@/generated/prisma";
+interface UserRepositoryProps {
+  name: string
+  email: string
+  password_hash: string
+}
 
 export interface UserRepository {
-  create(data: Prisma.UserCreateInput): Promise<User>
+  create(data: UserRepositoryProps): Promise<UserRepositoryProps>
 }
