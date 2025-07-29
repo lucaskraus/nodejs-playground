@@ -11,7 +11,15 @@ export async function registerUserController(request: FastifyRequest, reply: Fas
 
   const { name, email, password } = registerBodySchema.parse(request.body)
 
-  await registerUserService({ name, email, password })
+  try {
+    await registerUserService({ name, email, password })
+  } catch (err: unknown) {
+    if (err instanceof Error) {
+      return reply.status(400).send({ message: err.message })
+    }
+
+    return reply.status(500).send({ message: 'Internal server error' })
+  }
 
   return reply.status(201).send({ message: 'User created successfully' })
 }
